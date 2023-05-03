@@ -2,7 +2,7 @@ import logo from "../images/logo-Vinted.png";
 
 const Header = () => {
   return (
-    <>
+    <header>
       <div>
         <img src={logo} alt="Logo de Vinted" />
       </div>
@@ -20,7 +20,7 @@ const Header = () => {
         <button>Se connecter</button>
         <button>Vendes tes articles</button>
       </div>
-    </>
+    </header>
   );
 };
 
