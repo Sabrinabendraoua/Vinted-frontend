@@ -38,21 +38,42 @@ const Home = () => {
           <button>Commencer à vendre</button>
         </div>
       </section>
-      <div className="username-avatar">
+      <section className="username-avatar">
         {data.offers.map((dataoffers) => {
-          console.log(dataoffers.owner);
+          console.log(dataoffers);
+          if (dataoffers.owner.account.username) {
+            // console.log(dataoffers.avatar);
+            return (
+              <div key={dataoffers._id} className="product">
+                <div>
+                  <img src={dataoffers.owner.account.url} />
+                  <span>{dataoffers.owner.account.username}</span>
+                </div>
 
-          return (
-            <>
-              <div>
-                <img src="" alt="" />
-                <span>userName</span>
+                <div>
+                  <div>
+                    <img src={dataoffers.product_image.secure_url} />
+                  </div>
+                  <div>
+                    <span>{dataoffers.product_price} €</span>
+                    <div className="product-size">
+                      {data.offers.map((size) => {
+                        return (
+                          <>
+                            <span>{size.product_details.taille}</span>
+                            <span>{size.product_details}</span>
+                          </>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </>
-          );
+            );
+          }
         })}
-      </div>
-      <section></section>
+      </section>
+
       <Link to="/offer">
         <button>Naviguer vers Offer</button>
       </Link>

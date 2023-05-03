@@ -4,3 +4,6 @@ main > section:nth-child(1) > img {
   height: 450px;
   object-fit: cover;
 }
+.product img {
+  height: 100px;
+}
