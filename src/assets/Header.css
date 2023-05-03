@@ -7,7 +7,7 @@ header {
 header img {
   display: flex;
   flex: 1;
-  border: red 2px solid;
+  border: pink 2px solid;
   height: 80px;
 }
 

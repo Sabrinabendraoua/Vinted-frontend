@@ -1,0 +1,6 @@
+main > section:nth-child(1) > img {
+  border: 2px red solid;
+  width: 100vw;
+  height: 450px;
+  object-fit: cover;
+}

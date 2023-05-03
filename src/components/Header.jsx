@@ -1,4 +1,5 @@
 import logo from "../images/logo-Vinted.png";
+import "../assets/Header.css";
 
 const Header = () => {
   return (
