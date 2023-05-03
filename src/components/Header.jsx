@@ -1,8 +1,10 @@
+import logo from "../images/logo-Vinted.png";
+
 const Header = () => {
   return (
     <>
       <div>
-        <img src="../images/logo-Vinted.png" alt="Logo de Vinted" />
+        <img src={logo} alt="Logo de Vinted" />
       </div>
       <div>
         <div>
