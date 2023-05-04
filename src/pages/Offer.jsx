@@ -44,16 +44,14 @@ const Offer = () => {
               const valuekeys = Object.values(details);
               // console.log(keys);
               return (
-                <>
-                  <div className="keys-values">
-                    <div>
-                      <div key={index}>{keys}</div>
-                    </div>
-                    <div>
-                      <div key={index}>{valuekeys}</div>
-                    </div>
+                <div key={index} className="keys-values">
+                  <div>
+                    <div>{keys}</div>
                   </div>
-                </>
+                  <div>
+                    <div>{valuekeys}</div>
+                  </div>
+                </div>
               );
             })}
             <div>
