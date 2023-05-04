@@ -5,7 +5,7 @@ import hero from "../images/banner.png";
 import "../assets/Home.css";
 
 const Home = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Home = () => {
       </section>
       <section className="username-avatar">
         {data.offers.map((dataoffers) => {
-          console.log(dataoffers);
+          // console.log(dataoffers);
           if (dataoffers.owner.account.username) {
             // console.log(dataoffers.avatar);
             return (
@@ -57,11 +57,13 @@ const Home = () => {
                   <div>
                     <span>{dataoffers.product_price} €</span>
                     <div className="product-size">
-                      {data.offers.map((size) => {
+                      {data.offers.map((size, index) => {
+                        console.log(size, index);
                         return (
                           <>
-                            <span>{size.product_details.taille}</span>
-                            <span>{size.product_details}</span>
+                            {/* <span>{size.product_details.taille}</span> */}
+                            <span>taille</span>
+                            <span>marque</span>
                           </>
                         );
                       })}
