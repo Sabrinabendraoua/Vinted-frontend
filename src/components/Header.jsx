@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../images/logo-Vinted.png";
 import "../assets/Header.css";
 
@@ -5,7 +6,9 @@ const Header = () => {
   return (
     <header>
       <div>
-        <img src={logo} alt="Logo de Vinted" />
+        <Link to="/">
+          <img src={logo} alt="Logo de Vinted" />
+        </Link>
       </div>
       <div>
         <div>
