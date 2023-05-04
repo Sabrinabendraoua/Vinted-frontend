@@ -36,7 +36,37 @@ const Offer = () => {
         <img src={data.product_image.secure_url} alt="" />
       </div>
       <article>
-        <p>{data.product_price} €</p>
+        <div>
+          <p>{data.product_price} €</p>
+          <div className="details-product">
+            {data.product_details.map((details, index) => {
+              const keys = Object.keys(details);
+              const valuekeys = Object.values(details);
+              // console.log(keys);
+              return (
+                <>
+                  <div className="keys-values">
+                    <div>
+                      <div key={index}>{keys}</div>
+                    </div>
+                    <div>
+                      <div key={index}>{valuekeys}</div>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+            <div>
+              <div>
+                <p>{data.product_name}</p>
+                <p>{data.product_description}</p>
+              </div>
+              <p>avatar</p>
+              <p>username</p>
+              <button>Acheter</button>
+            </div>
+          </div>
+        </div>
       </article>
     </section>
     // <Link to="/home">
