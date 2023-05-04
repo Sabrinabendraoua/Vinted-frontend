@@ -5,7 +5,7 @@ import hero from "../images/banner.png";
 import "../assets/Home.css";
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -44,33 +44,41 @@ const Home = () => {
           if (dataoffers.owner.account.username) {
             // console.log(dataoffers.avatar);
             return (
-              <div key={dataoffers._id} className="product">
-                <div>
-                  <img src={dataoffers.owner.account.url} />
-                  <span>{dataoffers.owner.account.username}</span>
-                </div>
-
-                <div>
+              <Link to={`/offer/${dataoffers._id}`}>
+                <div key={dataoffers._id} className="product">
                   <div>
-                    <img src={dataoffers.product_image.secure_url} />
+                    {dataoffers.owner.account.avatar && (
+                      <img
+                        src={dataoffers.owner.account.avatar.secure_urlurl}
+                      />
+                    )}
+                    <span>{dataoffers.owner.account.username}</span>
                   </div>
+
                   <div>
-                    <span>{dataoffers.product_price} €</span>
-                    <div className="product-size">
-                      {data.offers.map((size, index) => {
-                        console.log(size, index);
-                        return (
-                          <>
-                            {/* <span>{size.product_details.taille}</span> */}
-                            <span>taille</span>
-                            <span>marque</span>
-                          </>
-                        );
-                      })}
+                    <div>
+                      <img src={dataoffers.product_image.secure_url} />
+                    </div>
+                    <div>
+                      <span>{dataoffers.product_price} €</span>
+
+                      <div className="product-detail">
+                        {dataoffers.product_details.map((detail, index) => {
+                          console.log(detail);
+                          if (detail.TAILLE) {
+                            return <span>{detail.TAILLE}</span>;
+                          }
+                        })}
+                        {dataoffers.product_details.map((detail, index) => {
+                          if (detail.MARQUE) {
+                            return <span>{detail.MARQUE}</span>;
+                          }
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           }
         })}
