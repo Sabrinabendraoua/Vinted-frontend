@@ -1,8 +1,11 @@
 const Form = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <>
       <h2>S'inscrire</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="firstname"
