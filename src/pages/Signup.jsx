@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+// import Cookies from "js-cookie";
 
 const Form = () => {
   const [username, setUsername] = useState("");
@@ -24,7 +25,7 @@ const Form = () => {
                 newsletter: newsletter,
               }
             );
-            console.log(response.data);
+            // console.log(response.data);
           } catch (error) {
             console.log(error);
           }
