@@ -14,16 +14,20 @@ const Form = () => {
       <form
         onSubmit={async (event) => {
           event.preventDefault();
-          const response = await axios.post(
-            "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-            {
-              email: email,
-              username: username,
-              password: password,
-              newsletter: newsletter,
-            }
-          );
-          console.log(response.data);
+          try {
+            const response = await axios.post(
+              "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+              {
+                email: email,
+                username: username,
+                password: password,
+                newsletter: newsletter,
+              }
+            );
+            console.log(response.data);
+          } catch (error) {
+            console.log(error);
+          }
         }}
       >
         <input
