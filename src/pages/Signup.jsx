@@ -2,36 +2,39 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import "../assets/Signup.css";
-// import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ handelToken }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
 
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          email: email,
+          username: username,
+          password: password,
+          newsletter: newsletter,
+        }
+      );
+
+      // console.log(response.data);
+      handelToken(response.data.token);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
-      <form
-        className="signup-container"
-        onSubmit={async (event) => {
-          event.preventDefault();
-          try {
-            const response = await axios.post(
-              "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-              {
-                email: email,
-                username: username,
-                password: password,
-                newsletter: newsletter,
-              }
-            );
-            // console.log(response.data);
-          } catch (error) {
-            console.log(error);
-          }
-        }}
-      >
+      <form className="signup-container" onSubmit={handleSubmit}>
         <h2>S'inscrire</h2>
         <input
           type="text"
@@ -62,6 +65,7 @@ const Signup = () => {
           <input
             id="newsletter"
             type="checkbox"
+            checked={newsletter}
             onChange={() => {
               setNewsletter(!newsletter);
             }}
