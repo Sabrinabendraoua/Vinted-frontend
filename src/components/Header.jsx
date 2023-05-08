@@ -12,11 +12,7 @@ const Header = () => {
       </div>
       <div>
         <div>
-          <p> Recherche des articles</p>
-          <div>
-            <span>trier par prix</span>
-            <span>prix entre</span>
-          </div>
+          <p> Rechercher des articles</p>
         </div>
       </div>
       <div>

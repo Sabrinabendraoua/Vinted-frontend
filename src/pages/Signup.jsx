@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import "../assets/Signup.css";
+import "../assets/Signup-login.css";
 import { useNavigate } from "react-router-dom";
 
 const Signup = ({ handelToken }) => {
@@ -34,7 +34,7 @@ const Signup = ({ handelToken }) => {
   };
   return (
     <>
-      <form className="signup-container" onSubmit={handleSubmit}>
+      <form className="signup-login-container" onSubmit={handleSubmit}>
         <h2>S'inscrire</h2>
         <input
           type="text"
@@ -78,7 +78,7 @@ const Signup = ({ handelToken }) => {
         </div>
         <button type="submit">S'inscrire</button>
         <Link to="/login">
-          <p>Tu as déjà un compte ?, connecte-toi !</p>
+          <p className="text-link">Tu as déjà un compte ?, connecte-toi !</p>
         </Link>
       </form>
     </>

@@ -16,4 +16,10 @@
 }
 a {
   all: unset;
+  cursor: pointer;
+}
+.text-link {
+  all: unset;
+  cursor: pointer;
+  color: #2db0ba;
 }
