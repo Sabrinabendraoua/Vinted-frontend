@@ -67,9 +67,9 @@ const Offer = () => {
         </div>
       </article>
     </section>
-    // <Link to="/home">
-    //   <button>Naviguer vers Home</button>
-    // </Link>
+    //  <Link to="/home">
+    // //   <button>Naviguer vers Home</button>
+    //  </Link>
   );
 };
 
