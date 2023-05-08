@@ -14,7 +14,7 @@ import Header from "./components/Header";
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
   //cette fonction va enregistrer l'argument token dans les cookies
-  const handelToken = (token) => {
+  const handleToken = (token) => {
     if (token) {
       Cookies.set("userToken", token, { expires: 7 });
       setUserToken(token);
@@ -25,12 +25,12 @@ function App() {
   };
   return (
     <Router>
-      <Header handelToken={handelToken} userToken={userToken} />
+      <Header handleToken={handleToken} userToken={userToken} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
-        <Route path="/signup" element={<Signup handelToken={handelToken} />} />
-        <Route path="/login" element={<Login handelToken={handelToken} />} />
+        <Route path="/signup" element={<Signup handleToken={handleToken} />} />
+        <Route path="/login" element={<Login handleToken={handleToken} />} />
       </Routes>
     </Router>
   );

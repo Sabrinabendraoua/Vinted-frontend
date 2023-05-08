@@ -4,7 +4,7 @@ import axios from "axios";
 import "../assets/Signup-login.css";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ handelToken }) => {
+const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,7 +22,7 @@ const Login = ({ handelToken }) => {
       );
 
       // console.log(response.data);
-      handelToken(response.data.token);
+      handleToken(response.data.token);
       navigate("/");
     } catch (error) {
       console.log(error);

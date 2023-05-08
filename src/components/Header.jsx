@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo-Vinted.png";
 import "../assets/Header.css";
 
-const Header = ({ handelToken, userToken }) => {
+const Header = ({ handleToken, userToken }) => {
   return (
     <header>
       <div>
@@ -24,14 +24,13 @@ const Header = ({ handelToken, userToken }) => {
             <Link to="/login">
               <button>Se connecter</button>
             </Link>
-
-            <button>Vends tes articles</button>
           </div>
+          <button>Vends tes articles</button>
         </>
       ) : (
         <button
           onClick={() => {
-            handelToken();
+            handleToken();
           }}
         >
           Déconnexion
