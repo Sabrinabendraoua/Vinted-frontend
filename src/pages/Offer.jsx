@@ -1,4 +1,4 @@
-import { useEffect, useState, Link } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../assets/Offer.css";
@@ -67,9 +67,9 @@ const Offer = () => {
         </div>
       </article>
     </section>
-    //  <Link to="/home">
-    // //   <button>Naviguer vers Home</button>
-    //  </Link>
+    // <Link to="/home">
+    //  <button>Naviguer vers Home</button>
+    // </Link>
   );
 };
 
