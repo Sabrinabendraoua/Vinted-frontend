@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo-Vinted.png";
 import "../assets/Header.css";
 
-const Header = () => {
+const Header = ({ handelToken }) => {
   return (
     <header>
       <div>
@@ -22,6 +22,13 @@ const Header = () => {
         <Link to="/login">
           <button>Se connecter</button>
         </Link>
+        <button
+          onClick={() => {
+            handelToken();
+          }}
+        >
+          Déconnexion
+        </button>
         <button>Vendes tes articles</button>
       </div>
     </header>
