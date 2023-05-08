@@ -29,7 +29,12 @@ header button {
   color: #2db0ba;
   height: 35px;
 }
-header button:nth-child(3) {
+header button:nth-child(4) {
   background-color: #2db0ba;
   color: white;
+}
+header button:nth-child(3) {
+  background-color: rgb(174, 12, 12);
+  color: white;
+  border: none;
 }
