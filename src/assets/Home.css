@@ -1,9 +1,19 @@
-main > section:nth-child(1) > img {
-  border: 2px red solid;
+.avatar {
+  border: red solid 2px;
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+}
+.hero > img {
   width: 100vw;
   height: 450px;
   object-fit: cover;
 }
-.product img {
-  height: 100px;
+.img-product > img {
+  width: 240px;
+  height: 400px;
+  object-fit: cover;
+}
+a {
+  all: unset;
 }

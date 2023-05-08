@@ -14,7 +14,7 @@ const Home = () => {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-        // console.log(response.data);// j'ai bien ma data
+        //console.log(response.data); // j'ai bien ma data
         // Je stocke le résultat dans data
         setData(response.data);
 
@@ -30,7 +30,7 @@ const Home = () => {
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
-    <main>
+    <>
       <section className="hero">
         <img src={hero} alt="photo banner Vinted" />
         <div>
@@ -38,56 +38,55 @@ const Home = () => {
           <button>Commencer à vendre</button>
         </div>
       </section>
-      <section className="username-avatar">
-        {data.offers.map((dataoffers) => {
-          // console.log(dataoffers);
-          if (dataoffers.owner.account.username) {
-            // console.log(dataoffers.avatar);
-            return (
-              <Link to={`/offer/${dataoffers._id}`}>
-                <div key={dataoffers._id} className="product">
-                  <div>
-                    {dataoffers.owner.account.avatar && (
-                      <img
-                        src={dataoffers.owner.account.avatar.secure_urlurl}
-                      />
-                    )}
-                    <span>{dataoffers.owner.account.username}</span>
-                  </div>
-
-                  <div>
+      <main className="container-main">
+        <section className="product-detail">
+          {data.offers.map((dataoffers) => {
+            // console.log(dataoffers);
+            if (dataoffers.owner.account.username) {
+              // console.log(dataoffers.avatar);
+              return (
+                <Link to={`/offer/${dataoffers._id}`}>
+                  <div key={dataoffers._id} className="product">
                     <div>
-                      <img src={dataoffers.product_image.secure_url} />
+                      {dataoffers.owner.account.avatar && (
+                        <img
+                          className="avatar"
+                          src={dataoffers.owner.account.avatar.secure_urlurl}
+                        />
+                      )}
+                      <span>{dataoffers.owner.account.username}</span>
                     </div>
-                    <div>
-                      <span>{dataoffers.product_price} €</span>
 
-                      <div className="product-detail">
-                        {dataoffers.product_details.map((detail, index) => {
-                          console.log(detail);
-                          if (detail.TAILLE) {
-                            return <span>{detail.TAILLE}</span>;
-                          }
-                        })}
-                        {dataoffers.product_details.map((detail, index) => {
-                          if (detail.MARQUE) {
-                            return <span>{detail.MARQUE}</span>;
-                          }
-                        })}
+                    <div>
+                      <div className="img-product">
+                        <img src={dataoffers.product_image.secure_url} />
+                      </div>
+                      <div>
+                        <span>{dataoffers.product_price} €</span>
+
+                        <div>
+                          {dataoffers.product_details.map((detail, index) => {
+                            console.log(detail);
+                            if (detail.TAILLE) {
+                              return <span>{detail.TAILLE}</span>;
+                            }
+                          })}
+                          {dataoffers.product_details.map((detail, index) => {
+                            if (detail.MARQUE) {
+                              return <span>{detail.MARQUE}</span>;
+                            }
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            );
-          }
-        })}
-      </section>
-
-      <Link to="/offer">
-        <button>Naviguer vers Offer</button>
-      </Link>
-    </main>
+                </Link>
+              );
+            }
+          })}
+        </section>
+      </main>
+    </>
   );
 };
 
