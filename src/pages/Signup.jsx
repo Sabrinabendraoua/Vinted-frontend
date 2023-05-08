@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import "../assets/Signup.css";
 // import Cookies from "js-cookie";
 
-const Form = () => {
+const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
 
   return (
-    <div>
-      <h2>S'inscrire</h2>
+    <>
       <form
+        className="signup-container"
         onSubmit={async (event) => {
           event.preventDefault();
           try {
@@ -31,6 +32,7 @@ const Form = () => {
           }
         }}
       >
+        <h2>S'inscrire</h2>
         <input
           type="text"
           placeholder="Nom d'utilisateur"
@@ -71,12 +73,12 @@ const Form = () => {
           </p>
         </div>
         <button type="submit">S'inscrire</button>
+        <Link to="/login">
+          <p>Tu as déjà un compte ?, connecte-toi !</p>
+        </Link>
       </form>
-      <Link to="/login">
-        <p>Tu as déjà un compte ?, connecte-toi !</p>
-      </Link>
-    </div>
+    </>
   );
 };
 
-export default Form;
+export default Signup;
