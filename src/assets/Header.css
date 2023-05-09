@@ -1,8 +1,10 @@
+body {
+  box-sizing: border-box;
+}
 header {
   display: flex;
   align-items: center;
   height: 100px;
-  border: black 2px solid;
 }
 header img {
   display: flex;
@@ -29,12 +31,13 @@ header button {
   color: #2db0ba;
   height: 35px;
 }
-header button:nth-child(4) {
+.button-article {
   background-color: #2db0ba;
   color: white;
 }
-header button:nth-child(3) {
+.button-deconnexion {
   background-color: rgb(174, 12, 12);
   color: white;
   border: none;
+  margin-right: 50px;
 }

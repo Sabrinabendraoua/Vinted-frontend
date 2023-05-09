@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 
 //Components
 import Header from "./components/Header";
@@ -31,6 +32,7 @@ function App() {
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
+        <Route path="/publish" element={<Publish userToken={userToken} />} />
       </Routes>
     </Router>
   );

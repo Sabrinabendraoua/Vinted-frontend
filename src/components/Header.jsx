@@ -25,10 +25,10 @@ const Header = ({ handleToken, userToken }) => {
               <button>Se connecter</button>
             </Link>
           </div>
-          <button>Vends tes articles</button>
         </>
       ) : (
         <button
+          className="button-deconnexion"
           onClick={() => {
             handleToken();
           }}
@@ -36,6 +36,9 @@ const Header = ({ handleToken, userToken }) => {
           Déconnexion
         </button>
       )}
+      <Link to="/Publish">
+        <button className="button-article">Vends tes articles</button>
+      </Link>
     </header>
   );
 };
