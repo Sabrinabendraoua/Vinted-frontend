@@ -45,7 +45,7 @@ const Pubish = ({ userToken }) => {
   };
   return userToken ? (
     <>
-      <form className="signup-login-container ">
+      <form className="signup-login-container " onSubmit={handleSubmit}>
         <input
           type="file"
           onChange={(event) => {
@@ -126,9 +126,7 @@ const Pubish = ({ userToken }) => {
             <button
               className="button-files"
               onClick={() => {
-                {
-                  handleSubmit;
-                }
+                alert("Votre article a bien été ajouté");
               }}
             >
               Ajouter l'article
