@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Pubish = ({ userToken }) => {
@@ -44,7 +45,7 @@ const Pubish = ({ userToken }) => {
   };
   return userToken ? (
     <>
-      <form className="signup-login-container " onSubmit={handleSubmit}>
+      <form className="signup-login-container ">
         <input
           type="file"
           onChange={(event) => {
@@ -52,7 +53,7 @@ const Pubish = ({ userToken }) => {
             setPicture(event.target.files[0]);
           }}
         />
-        {/* <img src={URL.createObjectURL(picture)} alt="" /> */}
+
         <input
           value={title}
           type="text"
@@ -121,14 +122,23 @@ const Pubish = ({ userToken }) => {
           }}
         />
         <div className="div-button-files">
-          <button className="button-files" onClick={() => {}}>
-            Ajouter l'article
-          </button>
+          <Link to="/">
+            <button
+              className="button-files"
+              onClick={() => {
+                {
+                  handleSubmit;
+                }
+              }}
+            >
+              Ajouter l'article
+            </button>
+          </Link>
         </div>
       </form>
     </>
   ) : (
-    <Navigate to="/login" />
+    <Navigate to="/Login" />
   );
 };
 
