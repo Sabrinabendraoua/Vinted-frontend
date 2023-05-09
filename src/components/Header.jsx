@@ -14,7 +14,7 @@ const Header = ({ handleToken, userToken }) => {
         <>
           <div>
             <div>
-              <p> Rechercher des articles</p>
+              <input type="text" placeholder="Rechercher des articles" />
             </div>
           </div>
           <div>
