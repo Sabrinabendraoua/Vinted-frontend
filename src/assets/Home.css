@@ -1,8 +1,48 @@
-.avatar {
+.hero {
+  position: relative;
+}
+.position-absolut {
+  position: absolute;
+  left: 30px;
+  top: 100px;
+  width: 400px;
+  height: 250px;
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.3rem;
+}
+.position-absolut > button {
+  background-color: #2baeb7;
+  width: 12rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1rem;
+}
+.product-detail {
+  border: rgb(0, 8, 255) solid 2px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.avatar-username {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 50px;
   border: red solid 2px;
+}
+.avatar {
   width: 50px;
   height: 50px;
-  margin-top: 20px;
+  border-radius: 50%;
 }
 .hero > img {
   width: 100vw;
@@ -11,7 +51,7 @@
 }
 .img-product > img {
   width: 240px;
-  height: 400px;
+  height: 350px;
   object-fit: cover;
 }
 a {

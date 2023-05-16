@@ -33,7 +33,7 @@ const Home = () => {
     <>
       <section className="hero">
         <img src={hero} alt="photo banner Vinted" />
-        <div>
+        <div className="position-absolut">
           <p>Prêts à faire du tri dans vos placards ?</p>
           <button>Commencer à vendre</button>
         </div>
@@ -43,15 +43,15 @@ const Home = () => {
           {data.offers.map((dataoffers) => {
             // console.log(dataoffers);
             if (dataoffers.owner.account.username) {
-              // console.log(dataoffers.avatar);
+              // console.log(dataoffers.owner.account.avatar);
               return (
                 <Link to={`/offer/${dataoffers._id}`}>
                   <div key={dataoffers._id} className="product">
-                    <div>
+                    <div className="avatar-username">
                       {dataoffers.owner.account.avatar && (
                         <img
                           className="avatar"
-                          src={dataoffers.owner.account.avatar.secure_urlurl}
+                          src={dataoffers.owner.account.avatar.secure_url}
                         />
                       )}
                       <span>{dataoffers.owner.account.username}</span>
