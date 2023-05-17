@@ -25,19 +25,23 @@
   color: white;
   font-size: 1rem;
 }
+.product {
+  width: 250px;
+}
 .product-detail {
-  border: rgb(0, 8, 255) solid 2px;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
   margin-top: 2rem;
 }
 .avatar-username {
   display: flex;
+  width: 100%;
   align-items: center;
   gap: 1rem;
   height: 50px;
-  border: red solid 2px;
+  margin-bottom: 0.5rem;
 }
 .avatar {
   width: 50px;
@@ -50,7 +54,7 @@
   object-fit: cover;
 }
 .img-product > img {
-  width: 240px;
+  width: 100%;
   height: 350px;
   object-fit: cover;
 }
@@ -62,4 +66,10 @@ a {
   all: unset;
   cursor: pointer;
   color: #2db0ba;
+}
+.size-band-price span {
+  font-weight: 600;
+}
+.size-band-price span:nth-child(2) {
+  padding-left: 1rem;
 }

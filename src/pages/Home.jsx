@@ -64,14 +64,14 @@ const Home = () => {
                       <div>
                         <span>{dataoffers.product_price} €</span>
 
-                        <div>
-                          {dataoffers.product_details.map((detail, index) => {
+                        <div className="size-band-price">
+                          {dataoffers.product_details.map((detail) => {
                             console.log(detail);
                             if (detail.TAILLE) {
                               return <span>{detail.TAILLE}</span>;
                             }
                           })}
-                          {dataoffers.product_details.map((detail, index) => {
+                          {dataoffers.product_details.map((detail) => {
                             if (detail.MARQUE) {
                               return <span>{detail.MARQUE}</span>;
                             }
