@@ -46,9 +46,8 @@ const Offer = () => {
             return (
               <div key={index} className="keys-values">
                 <div className="keys">{keys}</div>
-                <div className="values-position">
-                  <div className="values">{valuekeys}</div>
-                </div>
+
+                <div className="values">{valuekeys}</div>
               </div>
             );
           })}
