@@ -1,9 +1,9 @@
-* {
-  box-sizing: border-box;
+body {
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
 }
 .offer-id {
   display: flex;
-  width: 1026px;
+  width: 1280px;
   align-items: center;
   margin: 30px 150px;
   height: 600px;
@@ -19,16 +19,16 @@
   object-fit: cover;
 }
 article {
+  box-sizing: border-box;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 5rem;
-  width: 50%;
+  width: 40%;
   height: 600px;
-  padding: 10px 20px;
+  padding: 40px;
 }
 article > div > p:nth-child(1) {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 2rem;
   color: #111;
   font-weight: 600;
@@ -57,6 +57,33 @@ article > div > p:nth-child(1) {
   padding-bottom: 1rem;
   border-bottom: 1px solid rgb(219, 219, 219);
 }
-.name-description {
-  border: 2px solid blue;
+.name-description > p:nth-child(2) {
+  margin: 1rem 0;
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+.name-description > div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.name-description > div img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.name-description > div p {
+  font-size: 1.2rem;
+  color: #000;
+}
+article button {
+  background: #09b1ba;
+  border: 1px solid #09b1ba;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
 }
