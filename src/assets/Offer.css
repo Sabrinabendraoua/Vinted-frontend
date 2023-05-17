@@ -34,7 +34,7 @@ article > div > p:nth-child(1) {
 }
 .keys-values {
   display: flex;
-
+  justify-content: space-between;
   gap: 2rem;
   margin-bottom: 5px;
 }
