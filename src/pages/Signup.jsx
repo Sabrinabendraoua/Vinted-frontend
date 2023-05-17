@@ -62,14 +62,18 @@ const Signup = ({ handleToken }) => {
           value={password}
         />
         <div>
-          <input
-            id="newsletter"
-            type="checkbox"
-            checked={newsletter}
-            onChange={() => {
-              setNewsletter(!newsletter);
-            }}
-          />
+          <div className="checkbox">
+            <input
+              className="checkbox-input"
+              id="newsletter"
+              type="checkbox"
+              checked={newsletter}
+              onChange={() => {
+                setNewsletter(!newsletter);
+              }}
+            />
+            <span>S'inscrire à notre newsletter</span>
+          </div>
           <p>
             En m'inscrivant je confirme avoir lu et accepté les Termes &
             Conditions et Politique de Confidentialité de Vinted. Je confirme
