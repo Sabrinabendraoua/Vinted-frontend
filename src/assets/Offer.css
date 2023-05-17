@@ -1,9 +1,10 @@
 body {
+  margin: 0 auto;
   font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
 }
 .offer-id {
   display: flex;
-  width: 1280px;
+  margin: 0 auto;
   align-items: center;
   margin: 30px 150px;
   height: 600px;
@@ -19,6 +20,7 @@ body {
   object-fit: cover;
 }
 article {
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
