@@ -17,7 +17,7 @@ function App() {
   //cette fonction va enregistrer l'argument token dans les cookies
   const handleToken = (token) => {
     if (token) {
-      Cookies.set("userToken", token, { expires: 7 });
+      Cookies.set("userToken", token, { expires: 7, sameSite: "Strict" });
       setUserToken(token);
     } else {
       Cookies.remove("userToken");

@@ -82,7 +82,7 @@ const Signup = ({ handleToken }) => {
         </div>
         <button type="submit">S'inscrire</button>
         <Link to="/login">
-          <p className="text-link">Tu as déjà un compte ?, connecte-toi !</p>
+          <p className="text-link">Tu as déjà un compte ? connecte-toi !</p>
         </Link>
       </form>
     </>

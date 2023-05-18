@@ -16,6 +16,7 @@ const Pubish = ({ userToken }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     alert("Votre article a bien été ajouté");
+
     try {
       const formData = new FormData();
       formData.append("title", title);
