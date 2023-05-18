@@ -121,14 +121,15 @@ const Pubish = ({ userToken }) => {
         />
         <div className="div-button-files">
           <Link to="/">
-            <button
+            <input type="submit" value="Ajouter" className="button-files" />
+            {/* <button
               className="button-files"
               onClick={() => {
                 alert("Votre article a bien été ajouté");
               }}
             >
               Ajouter l'article
-            </button>
+            </button> */}
           </Link>
         </div>
       </form>
