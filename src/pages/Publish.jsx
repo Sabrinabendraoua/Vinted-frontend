@@ -40,7 +40,7 @@ const Pubish = ({ userToken }) => {
       );
       console.log(response.data);
     } catch (error) {
-      console.log(error.response.data);
+      console.log(error.message);
     }
   };
   return userToken ? (
@@ -64,8 +64,6 @@ const Pubish = ({ userToken }) => {
         />
         <textarea
           value={description}
-          name=""
-          id=""
           cols="30"
           rows="10"
           placeholder="Description"
@@ -115,7 +113,7 @@ const Pubish = ({ userToken }) => {
         />
         <input
           value={price}
-          type="number"
+          type="Number"
           placeholder="Prix"
           onChange={(event) => {
             setPrice(event.target.value);
