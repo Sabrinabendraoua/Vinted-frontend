@@ -1,6 +1,5 @@
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Pubish = ({ userToken }) => {
@@ -16,6 +15,7 @@ const Pubish = ({ userToken }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    alert("Votre article a bien été ajouté");
     try {
       const formData = new FormData();
       formData.append("title", title);
@@ -49,7 +49,7 @@ const Pubish = ({ userToken }) => {
         <input
           type="file"
           onChange={(event) => {
-            console.log(event);
+            // console.log(event);
             setPicture(event.target.files[0]);
           }}
         />
@@ -120,17 +120,7 @@ const Pubish = ({ userToken }) => {
           }}
         />
         <div className="div-button-files">
-          <Link to="/">
-            <input type="submit" value="Ajouter" className="button-files" />
-            {/* <button
-              className="button-files"
-              onClick={() => {
-                alert("Votre article a bien été ajouté");
-              }}
-            >
-              Ajouter l'article
-            </button> */}
-          </Link>
+          <input type="submit" value="Ajouter" className="button-files" />
         </div>
       </form>
     </>
